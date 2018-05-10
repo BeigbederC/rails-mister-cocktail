@@ -40,5 +40,3 @@ ActiveRecord::Schema.define(version: 20180510095008) do
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
 end
-
-
