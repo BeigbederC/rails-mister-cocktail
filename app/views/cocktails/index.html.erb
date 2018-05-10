@@ -1,2 +1,15 @@
-index.html.erb
-HOME
+<h1>HOME</h1>
+
+<%= link_to "create", new_cocktail_path %>
+<hr>
+
+<% @cocktails.each do |cocktail| %>
+  <h4><%= cocktail.name %></h4>
+
+<%= link_to "more details", cocktail_path(cocktail[:id]) %>
+<%= link_to "Delete", cocktail_path(cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<hr>
+
+<% end %>
