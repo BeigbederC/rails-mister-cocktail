@@ -46,6 +46,8 @@ gem 'turbolinks', '~> 5'
 
 gem 'figaro'
 
+gem 'cloudinary'
+
 ruby '2.4.3'
 
 group :development, :test do
