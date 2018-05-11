@@ -44,6 +44,8 @@ gem 'turbolinks', '~> 5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'figaro'
+
 ruby '2.4.3'
 
 group :development, :test do
