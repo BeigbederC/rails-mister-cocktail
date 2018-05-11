@@ -1,16 +1,29 @@
-<h1>HOME</h1>
 
-<%= link_to "create", new_cocktail_path %>
-<hr>
+<h1 class="text-center">HOME</h1>
 
-<% @cocktails.each do |cocktail| %>
-  <h4><%= cocktail.name %></h4>
+<div class="text-center padded">
+  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
 
-<%= link_to "more details", cocktail_path(cocktail[:id]) %>
-<%= link_to "Delete", cocktail_path(cocktail),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<hr>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </div>
+          <div class="card-body">
+            <%= link_to "more details", cocktail_path(cocktail[:id]) %>
+            <%= link_to "Delete", cocktail_path(cocktail),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% end %>
+
 
