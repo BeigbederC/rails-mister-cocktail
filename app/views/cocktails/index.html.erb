@@ -7,24 +7,37 @@
 
 <div class="container">
   <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
-          <div class="card-body">
-            <%=  cl_image_tag("fv8cvsmhfsqvmxivtfbs.jpg") %>
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </div>
-          <div class="card-body">
-            <%= link_to "more details", cocktail_path(cocktail[:id]) %>
-            <%= link_to "Delete", cocktail_path(cocktail),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-          </div>
+    <div class="col-xs-12 col-sm-4">
+
+      <% @cocktails.each do |cocktail| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+              <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail) %></div>
+
+
+                <div class="card-description">
+
+
+
+
+                          <%= link_to "more details", cocktail_path(cocktail[:id]) %>
+                          <%= link_to "Delete", cocktail_path(cocktail),
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+
+                </div>
+
+
+                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                <a class="card-link" href="#" ></a>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+
+
+    </div>
   </div>
 </div>
+
 
 
 
